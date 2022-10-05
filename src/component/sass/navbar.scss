@@ -1,23 +1,39 @@
     .side-nav-container{
-        
+        display: flex;
+        flex-direction: column;
+        gap:1.2rem;
         background-color: #16213E;
         height: 100vh;
 
         .nav-logo{
-            padding: 5px 10px;
+            display: flex;
+            justify-content: flex-start;
+            gap:75px;
+            padding: 15px 15px;
             h2{
                 color:white;
             }
         }
         
         .nav-links{
-            display: block;
+            
             ul li{
-                padding: 16px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap:35px;
+                padding: 15px;
                 h3{
                     color:white;
                 }
             }
+
+            ul li:hover{
+                
+                transition: .2s;
+                background-color: #48567c; 
+                border-right: 3.5px solid white;
+                }
             
         }
 
