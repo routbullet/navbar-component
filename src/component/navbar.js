@@ -1,38 +1,51 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./sass/navbar.scss";
-import { ICONS } from "./iconRoutes.js";
+import { NAV_ROUTE } from "./navRouts";
 
 export const NavbarComponent = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isClose, setIsClose] = useState(false);
+  const toggle = () => {
+    setIsClose(!isClose);
+  };
+
+  const toggleIcon = process.env.PUBLIC_URL + "/assets/toggle.svg";
   return (
-    <motion.div className="side-nav-container" animate={{ width: "210px" }}>
+    <motion.div
+      className="side-nav-container"
+      animate={{
+        width: isClose ? "56px" : "210px",
+        transition: {
+          duration: ".8s",
+          type: "spring",
+          damping: 12,
+        },
+      }}
+    >
       <div className="nav-logo">
-        <h2>LOGO</h2>
-        <img src={ICONS.TOGGLE} style={{ width: "30px" }} alt="" />
+        {!isClose && <h2>LOGO</h2>}
+        <img
+          onClick={toggle}
+          src={toggleIcon}
+          style={{
+            width: "30px",
+            transform: isClose ? "rotate(0deg)" : "rotate(180deg)",
+            transition: isClose ? "transform .9s" : "transform .8s",
+          }}
+          alt=""
+        />
       </div>
-      <div className="nav-links">
-        <ul>
-          <li>
-            <img src={ICONS.HOME} style={{ width: "30px" }} alt="" />
-            <h3>Home</h3>
-          </li>
-          <li>
-            <img src={ICONS.CATEGORY} style={{ width: "30px" }} alt="" />
 
-            <h3>Category</h3>
-          </li>
-          <li>
-            <img src={ICONS.SETTING} style={{ width: "30px" }} alt="" />
-
-            <h3>Setting</h3>
-          </li>
-          <li>
-            <img src={ICONS.ACCOUNT} style={{ width: "30px" }} alt="" />
-            <h3>Account</h3>
-          </li>
-        </ul>
-      </div>
+      {NAV_ROUTE.map((route) => (
+        <div className="nav-links">
+          <ul>
+            <li>
+              <img src={route.linkIcon} style={{ width: "30px" }} alt="" />
+              <h3>{route.linkName}</h3>
+            </li>
+          </ul>
+        </div>
+      ))}
     </motion.div>
   );
 };

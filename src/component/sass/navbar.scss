@@ -1,17 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+
     .side-nav-container{
         display: flex;
         flex-direction: column;
-        gap:1.2rem;
+        gap:1rem;
         background-color: #16213E;
         height: 100vh;
 
         .nav-logo{
             display: flex;
             justify-content: flex-start;
-            gap:75px;
-            padding: 15px 15px;
+            gap:59px;
+            padding: 15px 18px;
             h2{
                 color:white;
+                font-family: 'Rubik', sans-serif;
+                letter-spacing: .1em;
             }
         }
         
@@ -25,6 +30,8 @@
                 padding: 15px;
                 h3{
                     color:white;
+                    font-family: 'Oswald', sans-serif;
+                    letter-spacing: .1em;
                 }
             }
 
@@ -34,13 +41,7 @@
                 background-color: #48567c; 
                 border-right: 3.5px solid white;
                 }
-            
+
         }
 
-        
-
-        
-
-       
-        
     }
