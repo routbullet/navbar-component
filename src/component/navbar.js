@@ -14,11 +14,11 @@ export const NavbarComponent = () => {
     <motion.div
       className="side-nav-container"
       animate={{
-        width: isClose ? "56px" : "210px",
+        width: isClose ? "60px" : "210px",
         transition: {
-          duration: ".8s",
+          duration: ".7s",
           type: "spring",
-          damping: 12,
+          damping: 14,
         },
       }}
     >
@@ -41,7 +41,7 @@ export const NavbarComponent = () => {
           <ul>
             <li>
               <img src={route.linkIcon} style={{ width: "30px" }} alt="" />
-              <h3>{route.linkName}</h3>
+              {!isClose && <h3>{route.linkName}</h3>}
             </li>
           </ul>
         </div>
