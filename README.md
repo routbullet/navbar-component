@@ -1,3 +1,6 @@
+#. Project Description
+This project is the experimental for NAVBAR Component.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
