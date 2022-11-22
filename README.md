@@ -1,4 +1,5 @@
-#. Project Description
+# Project Description
+
 This project is the experimental for NAVBAR Component.
 
 # Getting Started with Create React App
